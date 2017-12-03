@@ -1,4 +1,4 @@
-package cn.acyou.iblog;
+package cn.acyou;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
