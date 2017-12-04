@@ -1,6 +1,7 @@
 package cn.acyou.service;
 
 import cn.acyou.entity.User;
+import cn.acyou.pojo.TEmp;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,4 +11,6 @@ import org.springframework.stereotype.Service;
 public interface UserService {
 
     User getUser();
+
+    TEmp getTempList(Integer id);
 }
