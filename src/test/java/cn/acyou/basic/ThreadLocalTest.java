@@ -1,4 +1,4 @@
-package cn.acyou;
+package cn.acyou.basic;
 
 import org.junit.Test;
 

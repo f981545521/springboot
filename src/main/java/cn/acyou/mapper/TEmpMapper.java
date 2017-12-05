@@ -3,8 +3,11 @@ package cn.acyou.mapper;
 import cn.acyou.pojo.TEmp;
 import cn.acyou.pojo.TEmpExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface TEmpMapper {
     int countByExample(TEmpExample example);
 

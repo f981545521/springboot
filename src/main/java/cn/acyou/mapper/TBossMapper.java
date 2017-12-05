@@ -3,8 +3,12 @@ package cn.acyou.mapper;
 import cn.acyou.pojo.TBoss;
 import cn.acyou.pojo.TBossExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
+@Mapper
 public interface TBossMapper {
     int countByExample(TBossExample example);
 
@@ -27,4 +31,6 @@ public interface TBossMapper {
     int updateByPrimaryKeySelective(TBoss record);
 
     int updateByPrimaryKey(TBoss record);
+
+    List<TBoss> getAll();
 }
