@@ -1,8 +1,6 @@
 package cn.acyou.controller;
 
 import cn.acyou.entity.User;
-import cn.acyou.pojo.TEmp;
-import cn.acyou.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,16 +17,6 @@ import java.util.Date;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
-    @Resource
-    private UserService userService;
-
-    @RequestMapping(value = "/getUser",method = {RequestMethod.GET})
-    @ResponseBody
-    @ApiOperation(value = "获取用户")
-    public User getUser(){
-        return userService.getUser();
-    }
 
     @RequestMapping(value = "/getUserName",method = {RequestMethod.GET})
     @ResponseBody
@@ -47,13 +35,6 @@ public class UserController {
     @ApiOperation(value = "传入用户信息")
     public User getUserInfo(User user){
         return user;
-    }
-
-    @RequestMapping(value = "/getTempDetail",method = {RequestMethod.GET})
-    @ResponseBody
-    @ApiOperation(value = "传入用户信息")
-    public TEmp getTempDetail(Integer id){
-        return userService.getTempList(id);
     }
 
 }
