@@ -1,8 +1,8 @@
-package cn.acyou.pojo;
+package cn.acyou.pojo.so;
 
 import cn.acyou.entity.So;
 
-public class TBoss {
+public class TBossSo extends So {
     private Integer id;
 
     private String name;

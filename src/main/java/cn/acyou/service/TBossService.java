@@ -11,4 +11,8 @@ import java.util.List;
 public interface TBossService {
 
     List<TBoss> getAll();
+
+    void addTBoss(TBoss tBoss);
+
+    TBoss getTBossDetail(Integer id);
 }

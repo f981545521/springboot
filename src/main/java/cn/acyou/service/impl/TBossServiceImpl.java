@@ -22,4 +22,15 @@ public class TBossServiceImpl implements TBossService {
     public List<TBoss> getAll() {
         return tBossMapper.getAll();
     }
+
+    @Override
+    public void addTBoss(TBoss tBoss) {
+        tBossMapper.insert(tBoss);
+    }
+
+    @Override
+    public TBoss getTBossDetail(Integer id) {
+        TBoss tBoss = tBossMapper.selectByPrimaryKey(id);
+        return tBoss;
+    }
 }
