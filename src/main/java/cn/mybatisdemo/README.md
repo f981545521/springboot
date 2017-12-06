@@ -22,12 +22,16 @@
 ### 参数与结果
 
 - **parameterType**
+
 将会传入这条语句的参数类的完全限定名或别名。这个属性是可选的，因为 MyBatis 可以通过 TypeHandler 推断出具体传入语句的参数，默认值为 unset。
 - **parameterMap(已废弃)**
+
 这是引用外部 parameterMap 的已经被废弃的方法。使用内联参数映射和 parameterType 属性。
 - **resultType**
+
 从这条语句中返回的期望类型的类的完全限定名或别名。注意如果是集合情形，那应该是集合可以包含的类型，而不能是集合本身。使用 resultType 或 resultMap，但不能同时使用。
 - **resultMap**
+
 外部 resultMap 的命名引用。结果集的映射是 MyBatis 最强大的特性，对其有一个很好的理解的话，许多复杂映射的情形都能迎刃而解。使用 resultMap 或 resultType，但不能同时使用。
 > resultMap 是解决列名不匹配的另外一种方式，此外还有使用别名。
 
