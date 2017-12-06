@@ -1,5 +1,6 @@
 package cn.acyou.controller;
 
+import cn.acyou.entity.So;
 import cn.acyou.pojo.TBoss;
 import cn.acyou.service.TBossService;
 import cn.acyou.utility.ResultInfo;

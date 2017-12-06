@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mybatisdemo.TBossMapper">
+    <resultMap id="resultMap" type="cn.mybatisdemo.TBoss">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <id column="name" jdbcType="VARCHAR" property="name" />
+        <id column="age" jdbcType="INTEGER" property="age" />
+    </resultMap>
+    <sql id="baseColumn">
+        id,name,age
+    </sql>
+
+    <select id="selectTBoss" resultType="cn.mybatisdemo.TBoss">
+        select
+         <include refid="baseColumn"/>
+        from t_boss where id = #{id}
+    </select>
+
+    <select id="selectTBossByResultMap" resultMap="resultMap">
+        select * from t_boss where id = #{id}
+    </select>
+
+    <!-- 使用@Param传参 -->
+    <update id="updateTBoss">
+      update t_boss set name = #{name} where id = #{id}
+    </update>
+    <!-- 使用顺序传参（不建议使用） -->
+    <update id="updateTBossOld">
+        update t_boss set name = #{1} where id = #{0}
+    </update>
+    <!--传入的参数如果是一个对象，使用parameterType-->
+    <update id="updateTBossByPo" parameterType="cn.mybatisdemo.TBoss">
+        update t_boss
+        <set>
+            <if test="name != null">name = #{name}</if>
+        </set>
+        <where>
+            <if test="id != null">id = #{id}</if>
+        </where>
+    </update>
+    <!--useGeneratedKeys：获取主键，keyProperty：使用主键(将值set进bean中)-->
+    <insert id="addTBoss" parameterType="cn.mybatisdemo.TBoss" useGeneratedKeys="true" keyProperty="id">
+        insert into t_boss (name,age) VALUES (#{name},#{age})
+    </insert>
+    <select id="getNames" resultType="string">
+        SELECT name FROM t_boss
+    </select>
+    <select id="getTBossListWithResultType" resultType="cn.mybatisdemo.TBoss">
+        select * from t_boss
+    </select>
+    <select id="getTBossListWithResultMap" resultMap="resultMap">
+        select
+         <include refid="baseColumn"/>
+        from t_boss
+    </select>
+</mapper>

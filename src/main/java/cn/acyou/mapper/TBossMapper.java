@@ -33,4 +33,7 @@ public interface TBossMapper {
     int updateByPrimaryKey(TBoss record);
 
     List<TBoss> getAll();
+
+
+
 }
