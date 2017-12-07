@@ -12,14 +12,14 @@ public class TBoss implements Serializable{
     private Integer age;
 
     public TBoss(){
-        System.out.println("注意：开始newTBoss");
+        //System.out.println("注意：开始newTBoss");
     }
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
-        System.out.println("注意：开始setid");
+        //System.out.println("注意：开始setid");
         this.id = id;
     }
 
