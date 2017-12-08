@@ -5,3 +5,7 @@
 ## 目录
 
 - [MyBatis集成SpringBoot](notes/MyBatis集成SpringBoot.md)
+- [MyBatis使用手册](notes/MyBatis使用手册.md)
+
+
+
