@@ -102,6 +102,12 @@
 			<artifactId>mapper</artifactId>
 			<version>3.4.2</version>
 		</dependency>
+		<!--代码生成器依赖-->
+		<dependency>
+			<groupId>com.ibeetl</groupId>
+			<artifactId>beetl</artifactId>
+			<version>2.7.23</version>
+		</dependency>
 		<!--mybatis for SpringBoot-->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
