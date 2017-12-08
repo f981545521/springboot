@@ -33,4 +33,12 @@ public class TBossServiceImplTest {
     }
 
 
+    @Test
+    public void test2(){
+        List<TBoss> tBossList = tBossService.getAllByExample(22);
+        for(TBoss tBoss : tBossList){
+            System.out.println(tBoss);
+        }
+    }
+
 }

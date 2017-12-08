@@ -35,7 +35,7 @@ public class TBoss {
 
     @Override
     public String toString() {
-        return "TBossSo{" +
+        return "TBoss{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +

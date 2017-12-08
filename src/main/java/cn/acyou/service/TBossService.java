@@ -12,6 +12,8 @@ public interface TBossService {
 
     List<TBoss> getAll();
 
+    List<TBoss> getAllByExample(Integer age);
+
     void addTBoss(TBoss tBoss);
 
     TBoss getTBossDetail(Integer id);

@@ -93,4 +93,7 @@ SELECT * FROM BLOG WHERE AND title like 'someTitle'
 >
 > 类似的用于动态更新语句的解决方案叫做 set。set 元素可以被用于动态包含需要更新的列，而舍去其他的。
 
+### 参考文档
 
+- [Mybatis官方中文参考手册](http://www.mybatis.org/mybatis-3/zh/index.html)
+- [MybatisExample类使用说明](http://mbg.cndocs.ml/generatedobjects/exampleClassUsage.html)

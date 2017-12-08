@@ -2,6 +2,7 @@ package cn.acyou.service.impl;
 
 import cn.acyou.mapper.TBossMapper;
 import cn.acyou.pojo.TBoss;
+import cn.acyou.pojo.TBossExample;
 import cn.acyou.service.TBossService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,13 @@ public class TBossServiceImpl implements TBossService {
     @Override
     public List<TBoss> getAll() {
         return tBossMapper.getAll();
+    }
+
+    @Override
+    public List<TBoss> getAllByExample(Integer age) {
+        TBossExample tBossExample = new TBossExample();
+        tBossExample.createCriteria().andAgeEqualTo(age);
+        return tBossMapper.selectByExample(tBossExample);
     }
 
     @Override
