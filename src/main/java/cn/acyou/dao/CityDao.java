@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.*;
  *
  * Created by xchunzhao on 02/05/2017.
  */
-@Mapper // 标志为 Mybatis 的 Mapper
+//@Mapper // 标志为 Mybatis 的 Mapper
 public interface CityDao {
 
     /**

@@ -39,4 +39,10 @@ public class JodaTimeDemo {
         DateTime dateTime = new DateTime(2000, 1, 1, 0, 0, 0, 0);
         System.out.println(dateTime.plusDays(90).toString("E MM/dd/yyyy HH:mm:ss.SSS"));
     }
+
+    @Test
+    public void test3(){
+        Byte b = new Byte("1");
+        System.out.println(b);
+    }
 }
