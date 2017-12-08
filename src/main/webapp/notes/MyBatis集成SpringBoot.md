@@ -25,7 +25,7 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 
 ### 第②种方式
  1. 通过配置类`MyBatisConfigurer.java`
- 2. 详情请查询本类[MyBatisConfigurer]()
+ 2. 详情请查询本类[MyBatisConfigurer](https://github.com/f981545521/springboot/blob/master/src/main/java/cn/acyou/conf/MyBatisConfigurer.java)
 
 
 
