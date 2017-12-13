@@ -1,6 +1,7 @@
 package cn.acyou.controller;
 
 import cn.acyou.entity.So;
+import cn.acyou.pojo.Boss;
 import cn.acyou.pojo.TBoss;
 import cn.acyou.service.TBossService;
 import cn.acyou.utility.ResultInfo;
@@ -67,6 +68,14 @@ public class TBossController {
     @ApiOperation(value = "使用默认方式传值",notes = "default")
     public ResultInfo getTBossDetail3(Integer id){
         TBoss tBoss = tBossService.getTBossDetail(id);
+        return new ResultInfo(200,tBoss,"SUCCESS");
+    }
+
+    @RequestMapping(value = "/Boss",method = {RequestMethod.GET})
+    @ResponseBody
+    @ApiOperation(value = "使用通用Mapper",notes = "")
+    public ResultInfo getBoss(){
+        List<Boss> tBoss = tBossService.getAllBoss();
         return new ResultInfo(200,tBoss,"SUCCESS");
     }
 

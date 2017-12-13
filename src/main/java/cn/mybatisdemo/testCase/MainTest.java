@@ -6,6 +6,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Assert;
 import org.junit.Test;
 
 
@@ -108,6 +109,26 @@ public class MainTest {
         TBossMapper tBossMapper = session.getMapper(TBossMapper.class);
         List<TBoss> list = tBossMapper.getTBossListWithResultMap();
         System.out.println(list);
+        session.commit();
+        session.close();
+    }
+
+    /**
+     * 测试MyBatis缓存
+     * @throws Exception
+     */
+    @Test
+    public void test8() throws Exception {
+        String resource = "mybatisdemo/mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession session = sqlSessionFactory.openSession();
+        TBossMapper tBossMapper = session.getMapper(TBossMapper.class);
+        TBoss tBoss = tBossMapper.selectTBoss(1);
+        System.out.println(tBoss);
+        tBoss.setName("王二小");
+        tBoss.setAge(666);
+        tBossMapper.addTBoss(tBoss);
         session.commit();
         session.close();
     }

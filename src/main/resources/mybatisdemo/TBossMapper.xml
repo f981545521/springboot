@@ -3,6 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.mybatisdemo.TBossMapper">
+    <cache eviction="LRU" flushInterval="60000" size="512" readOnly="true"/><!--开启缓存-->
+
     <resultMap id="resultMap" type="cn.mybatisdemo.TBoss">
         <id column="id" jdbcType="INTEGER" property="id" />
         <id column="name" jdbcType="VARCHAR" property="name" />

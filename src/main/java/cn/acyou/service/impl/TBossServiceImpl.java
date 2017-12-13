@@ -1,6 +1,8 @@
 package cn.acyou.service.impl;
 
+import cn.acyou.mapper.BossMapper;
 import cn.acyou.mapper.TBossMapper;
+import cn.acyou.pojo.Boss;
 import cn.acyou.pojo.TBoss;
 import cn.acyou.pojo.TBossExample;
 import cn.acyou.service.TBossService;
@@ -18,6 +20,9 @@ public class TBossServiceImpl implements TBossService {
 
     @Autowired
     private TBossMapper tBossMapper;
+
+    @Autowired
+    private BossMapper bossMapper;
 
     @Override
     public List<TBoss> getAll() {
@@ -40,5 +45,10 @@ public class TBossServiceImpl implements TBossService {
     public TBoss getTBossDetail(Integer id) {
         TBoss tBoss = tBossMapper.selectByPrimaryKey(id);
         return tBoss;
+    }
+
+    @Override
+    public List<Boss> getAllBoss() {
+        return bossMapper.selectAll();
     }
 }

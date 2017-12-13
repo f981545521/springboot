@@ -1,5 +1,6 @@
 package cn.mybatisdemo;
 
+import org.apache.ibatis.annotations.CacheNamespaceRef;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * @author youfang
  * @date 2017-12-06 14:19
  **/
+@CacheNamespaceRef(TBossMapper.class)
 public interface TBossMapper {
 
     TBoss selectTBoss(Integer id);

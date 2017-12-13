@@ -45,4 +45,19 @@ public class JodaTimeDemo {
         Byte b = new Byte("1");
         System.out.println(b);
     }
+
+    @Test
+    public void test4(){
+        DateTime dateTime = new DateTime();
+        System.out.println(dateTime.toString("yyyy-MM-dd"));
+
+//        DateTimeFormatter format = DateTimeFormat.forPattern("yyyy-dd-MM");
+        SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println(fm.format(new Date()));
+    }
+
+    @Test
+    public void test5(){
+        System.out.println(new DateTime().toString("yyyy-MM-dd"));
+    }
 }

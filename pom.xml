@@ -69,10 +69,10 @@
 		</dependency>
 
 		<!-- SpringBoot自身提供了SpringBoot-DevTool来做热部署  -->
-		<dependency>
+<!--		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
+		</dependency>-->
 		<!-- joda时间处理类 -->
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -119,6 +119,12 @@
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper</artifactId>
 			<version>4.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.belerweb</groupId>
+			<artifactId>pinyin4j</artifactId>
+			<version>2.5.0</version>
 		</dependency>
 
 		<dependency>

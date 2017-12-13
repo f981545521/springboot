@@ -23,7 +23,7 @@ import java.util.Properties;
  * @date 2017-12-07 17:37
  **/
 @Configuration
-@MapperScan(value = {"cn.acyou.mapper","cn.acyou.dao"})//接口扫描
+@MapperScan(value = {"cn.acyou.mapper","cn.acyou.dao","cn.mybatispagehelper.mapper"})//接口扫描
 public class MyBatisConfigurer {
 
     @Autowired
@@ -35,6 +35,7 @@ public class MyBatisConfigurer {
         sqlsession.setDataSource(dataSource);
         // typeAliasesPackage：它一般对应我们的实体类所在的包，这个时候会自动取对应包中不包括包名的简单类名作为包括包名的别名。多个package之间可以用逗号或者分号等来进行分隔。(value的值一定要是包的全名)
         sqlsession.setTypeAliasesPackage("cn.acyou.pojo");//扫描entity包 使用别名
+        sqlsession.setTypeAliasesPackage("cn.mybatispagehelper.model");
         org.apache.ibatis.session.Configuration configuration=new org.apache.ibatis.session.Configuration();
         configuration.setUseGeneratedKeys(true);//使用jdbc的getGeneratedKeys获取数据库自增主键值
         configuration.setUseColumnLabel(true);//使用列别名替换列名 select user as User

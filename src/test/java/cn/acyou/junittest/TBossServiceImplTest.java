@@ -1,8 +1,10 @@
 package cn.acyou.junittest;
 
-import cn.acyou.Application;
+import cn.Application;
 import cn.acyou.pojo.TBoss;
 import cn.acyou.service.TBossService;
+import cn.mybatispagehelper.mapper.CountryMapper;
+import cn.mybatispagehelper.model.Country;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,12 +26,38 @@ public class TBossServiceImplTest {
     @Resource
     private TBossService tBossService;
 
+    @Resource
+    private CountryMapper countryMapper;
+
     @Test
     public void test1(){
         List<TBoss> tBossList = tBossService.getAll();
+        //MyBatis查出来的结果不可能为null
+        System.out.println(tBossList.size());
         for(TBoss tBoss : tBossList){
             System.out.println(tBoss);
         }
+    }
+    @Test
+    public void test1_1(){
+        TBoss tBoss = tBossService.getTBossDetail(2);
+        //MyBatis查出来的对象可能为空
+        if("谁说的".equals(tBoss.getName())){
+            System.out.println(tBoss);
+        }
+    }
+
+    @Test
+    public void test1_3(){
+        TBoss tBoss = tBossService.getTBossDetail(2);
+        //MyBatis查出来的对象可能为空
+        if("谁说的".equals(tBoss.getName())){
+            System.out.println(tBoss);
+        }
+    }
+    @Test
+    public void test1_2(){
+        System.out.println("".equals(null));
     }
 
 
@@ -39,6 +67,12 @@ public class TBossServiceImplTest {
         for(TBoss tBoss : tBossList){
             System.out.println(tBoss);
         }
+    }
+
+    @Test
+    public void test3(){
+        List<Country> countries = countryMapper.selectAll();
+        System.out.println(countries);
     }
 
 }

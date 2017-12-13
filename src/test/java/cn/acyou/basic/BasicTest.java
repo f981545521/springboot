@@ -20,4 +20,10 @@ public class BasicTest {
         System.out.println(sdf.format(date));
         System.out.println(date1);
     }
+
+    @Test
+    public void test2(){
+        Integer i = 4;
+        System.out.println(i instanceof Integer);
+    }
 }

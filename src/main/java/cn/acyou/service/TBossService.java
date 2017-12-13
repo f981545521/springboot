@@ -1,5 +1,6 @@
 package cn.acyou.service;
 
+import cn.acyou.pojo.Boss;
 import cn.acyou.pojo.TBoss;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface TBossService {
     void addTBoss(TBoss tBoss);
 
     TBoss getTBossDetail(Integer id);
+
+    List<Boss> getAllBoss();
 }
