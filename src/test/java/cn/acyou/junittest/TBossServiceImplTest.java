@@ -75,4 +75,10 @@ public class TBossServiceImplTest {
         System.out.println(countries);
     }
 
+    @Test
+    public void test4(){
+        System.out.println("<————————————"+ "\t\t\t\t\t\t\t耗时：5 ms - id:com.air.tqb.mapper.base.MenuMapper.getMiddleMenuByUrl" +"————————————>");
+        System.out.println("<——————————————————————————————————————————————————————————————————————>");
+    }
+
 }
