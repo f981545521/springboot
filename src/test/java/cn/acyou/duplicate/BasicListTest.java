@@ -83,6 +83,14 @@ public class BasicListTest {
         Long l = null;
         System.out.println(l.equals(null));
     }
+    @Test
+    public void testLong2(){
+        Long l = 23456L;
+        Long l2 = 2345L;
+        System.out.println(l.equals(l2));
+        System.out.println(l == l2);
+        System.out.println(l > l2);
+    }
 
     @Test
     public void testIntegers(){

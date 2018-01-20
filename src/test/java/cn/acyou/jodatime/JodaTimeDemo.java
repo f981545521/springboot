@@ -5,6 +5,7 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 
+import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -59,5 +60,16 @@ public class JodaTimeDemo {
     @Test
     public void test5(){
         System.out.println(new DateTime().toString("yyyy-MM-dd"));
+    }
+
+    @Test
+    public void test6(){
+        System.out.println(new DateTime().toString("/yyyy/MM/"));
+    }
+
+    @Test
+    public void test7(){
+        String url = "http://f6carzone.b0.upaiyun.com/f6-insurance/2018/01/15161682834330327.jpg";
+        System.out.println(url.substring(url.indexOf("/",url.indexOf("//") + 2)));
     }
 }
