@@ -2,6 +2,7 @@ package cn.acyou.enums;
 
 import com.google.common.collect.Lists;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,6 +18,7 @@ public enum AllowImageType {
             allType.add(type.toString());
         }
         return  allType;
+
     }
 
 }
