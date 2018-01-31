@@ -1,11 +1,9 @@
 package cn.acyou.duplicate;
 
+import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author youfang
@@ -29,10 +27,6 @@ public class BasicListTest {
         System.out.println(list == integers);//false
         System.out.println(list2 == integers);//false
         System.out.println(list3 == integers);//true    永远是最后一个还是以前的引用，其他的都是copy
-        for (Integer num : list) {
-            if (num == 8)
-                list.remove(num);
-        }
     }
 
     @Test
@@ -94,9 +88,10 @@ public class BasicListTest {
 
     @Test
     public void testIntegers(){
-        String val = "1101";
-        int a1 = Integer.valueOf(val);//返回值是Integer型的.
-        int a2 = Integer.parseInt(val);//返回值是int型的.
+        String val = "110221";
+        String val2 = "110221";
+        Integer a1 = Integer.valueOf(val);//返回值是Integer型的.
+        int a2 = Integer.parseInt(val2);//返回值是int型的.
         //1.使用Integer.valueOf(0)专门用于处理对象类型的数字，虽然也可以用来处理字符串转换成数字。
         //2.建议使用Integer.parseInt("0");此方法专门用于将字符串转换成数字。
         System.out.println(a1 == a2);
@@ -159,5 +154,36 @@ public class BasicListTest {
         System.out.println(list);
     }
 
+    @Test
+    public void test10(){
+        List<String> stringList = new ArrayList<>(Arrays.asList("12","234"));
+        List<Integer> stringList2 = ImmutableList.of(12,34);//不可改变的数组，当在尝试add、remove的时候UnsupportedOperationException
+        System.out.println(stringList);
+        System.out.println(stringList2);
+    }
+
+    @Test
+    public void test10_1(){
+        List<String> list = new ArrayList<String>(){{add("e");add("3");}};
+        System.out.println(list);
+    }
+
+    @Test
+    public void test11(){
+        Double d1 = null;
+        System.out.println(d1 == null);
+    }
+
+    @Test
+    public void test12(){
+        String[] packages = {"23","34"};
+        System.out.println(Arrays.toString(packages));
+    }
+    @Test
+    public void test13(){
+        Double d1 = 1.23;
+        Double d2 = d1 != null?d1:0.0;
+        System.out.println(d2);
+    }
 
 }
