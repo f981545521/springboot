@@ -5,9 +5,14 @@ import org.junit.Test;
 /**
  * @author youfang
  * @date 2017-12-20 19:17
+ * 命名转换
+ *
  **/
 public class NameTransformat {
 
+    /**
+     * 驼峰转下划线
+     */
     @Test
     public void test1(){
         String ss = "pkId, code, name, contacts, contactNumber, province, city, area, street, address, detailAddress, email, parentId, isDelete, entityCode, creationTime, modifiedTime, creater, modifier, bussiness, logo, storeLogo, applicationLogo, responsible, zipCode, contactMobile, fax, endDate, qq, bankAccount, accountNumber, openTime, closeTime, positionX, positionY, idCustomerCarzone, idDepartmentCarzone, isTaskModeEnable, abbreviation, needScanLogin, needCheckUuid, uuidCountLimit, fromFlag, isAheadGatheringEnable";
@@ -21,6 +26,9 @@ public class NameTransformat {
 
     }
 
+    /**
+     * 下划线转驼峰
+     */
     @Test
     public void test2(){
         String ss = "pk_id, code, name, contacts, contact_number, province, city, area, street, address, detail_address, email, parent_id, is_delete, entity_code, creation_time, modified_time, creater, modifier, bussiness, logo, store_logo, application_logo, responsible, zip_code, contact_mobile, fax, end_date, qq, bank_account, account_number, open_time, close_time, position_x, position_y, id_customer_carzone, id_department_carzone, is_task_mode_enable, abbreviation, need_scan_login, need_check_uuid, uuid_count_limit, from_flag, is_ahead_gathering_enable";

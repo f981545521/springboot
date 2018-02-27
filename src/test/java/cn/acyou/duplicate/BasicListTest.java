@@ -1,6 +1,7 @@
 package cn.acyou.duplicate;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import org.junit.Test;
 
 import java.util.*;
@@ -184,6 +185,60 @@ public class BasicListTest {
         Double d1 = 1.23;
         Double d2 = d1 != null?d1:0.0;
         System.out.println(d2);
+    }
+
+    @Test
+    public void test14(){
+        Map<String,Map<String,Double>> map = new HashMap<>();
+        Map<String,Double> doubleMap = new HashMap<>();
+        doubleMap.put("123",9.99);
+        map.put("456",doubleMap);
+
+        Map<String,Double> doubleMap2 = new HashMap<>();
+        doubleMap2.put("1234",7.99);
+        map.put("456",doubleMap2);
+        System.out.println(map.get("456").get("1234"));
+
+    }
+
+    @Test
+    public void test15(){
+        Map<String,Map<String,Double>> map = new HashMap<>();
+        Map<String,Double> doubleMap = new HashMap<>();
+        doubleMap.put("123",9.99);
+        doubleMap.put("456",8.88);
+        map.put("GG",doubleMap);
+        System.out.println(map.get("GG").get("123"));
+        System.out.println(map.get("GG").get("456"));
+        map.get("GG").put("789",6.66);
+        System.out.println(map.get("GG").get("789"));
+    }
+
+    @Test
+    public void test16(){
+        //Map<int,Double> map = new HashMap<>();
+        Map map1 = new HashMap();
+        int k = 2,v = 33;
+        map1.put(k,v);
+        System.out.println(map1);
+        Integer b = 123;
+        System.out.println(map1 instanceof Object);
+    }
+    @Test
+    public void test16_1(){
+        Map<Integer,Double> doubleMap = new HashMap<>();
+        doubleMap.put(123,9.99);
+        doubleMap.put(456,8.88);
+        System.out.println(doubleMap.containsKey(123));
+
+        Map<String,Double> map = ImmutableMap.of("234",23.45);
+        System.out.println(map);
+    }
+
+    @Test
+    public void test17(){
+        int i = 10;
+        //System.out.println(i instanceof Object);
     }
 
 }
